@@ -1,0 +1,234 @@
+@import '../../../../styles/mixin';
+
+
+.about_container {
+    padding-top: 60px;
+    padding-bottom: 200px;
+    position: relative;
+
+    @include tab {
+        padding-top: 76px;
+        padding-bottom: 76px;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .sidebar {
+            width: 32%;
+
+            @include tab {
+                display: none;
+            }
+
+            ul {
+
+                li {
+
+                    .side_link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        height: 54px;
+                        line-height: 54px;
+                        border-bottom: 1px solid color(dark_blue);
+                        padding-left: 26px;
+                        padding-right: 16px;
+                        font-size: 18px;
+                        color: color(dark_blue);
+                        width: 100%;
+                        border-radius: 0;
+                        position: relative;
+                        font-family: $Mont;
+						letter-spacing: initial;
+						padding-top: 0.375rem;
+						padding-bottom: 0.375rem;
+							img {
+								position: absolute;
+								right: 16px;
+								top: 50%;
+								transform: translateY(-50%);
+								height: 14px;
+								width: 8px;
+								object-fit: contain;
+								object-position: center;
+							}
+
+							&.active {
+								background: #EFF7FB;
+								font-weight: bold;
+							}
+                    }
+                }
+            }
+        }
+
+        .content_wrap {
+            width: 63%;
+
+            @include tab {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.banner {
+    height: 250px;
+    position: relative;
+
+    @include mobile {
+        height: 188px;
+    }
+
+    .bg {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .wrapper {
+        position: absolute;
+        left: 0;
+        height: 100px;
+        width: 100vw;
+        top: calc(50% - 50px);
+
+        @include mobile {
+            height: 49px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        h1 {
+            width: 32%;
+            position: relative;
+
+            @include tab {
+                width: unset;
+                padding-right: 30px;
+                display: inline-block;
+            }
+
+            @include mobile {
+                width: unset;
+                background: color(green);
+                text-align: center;
+                padding-right: 0;
+                display: block;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 49px;
+                line-height: 100px;
+                color: #FFFFFF;
+                font-family: $Mont;
+                position: relative;
+                letter-spacing: 1px;
+                z-index: 2;
+
+                @include mobile {
+                    font-size: 26px;
+                    line-height: 49px;
+                    text-align: center;
+                }
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 100px;
+                background: color(green);
+                width: 100vw;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+
+                @include mobile {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+.mobile_drop_menu {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #EFF7FB;
+    z-index: 9;
+    display: none;
+
+    &.fix {
+        position: fixed;
+        top: 69px;
+    }
+
+    @include tab {
+        display: block;
+    }
+    
+    .btn {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    > .selected {
+        padding: 0 25px;
+        height: 49px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba($color: #264F7F, $alpha: 0.5);
+        background: #EFF7FB;
+        position: relative;
+        z-index: 2;
+
+        img {
+            width: 19px;
+            height: 10px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+            color: color(dark_blue);
+            font-family: $Mont;
+        }
+    }
+
+    ul {
+        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.26);
+        position: relative;
+        z-index: 1;
+
+        li {
+
+            .btn {
+                padding: 0 25px;
+                height: 49px;
+                width: 100%;
+                border-bottom: 1px solid rgba($color: #264F7F, $alpha: 0.5);
+                display: flex;
+                align-items: center;
+                font-size: 17px;
+                line-height: 21px;
+                color: color(dark_blue);
+                font-family: $Mont;
+            }
+        }
+    }
+}

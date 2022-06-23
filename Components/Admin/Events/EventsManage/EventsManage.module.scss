@@ -1,0 +1,220 @@
+@import '../../../../styles/_mixin.scss';
+
+.contains_everything {
+	position: relative;
+	min-height: calc(100vh - 471px);
+    
+    .admin_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 65px;
+        margin-bottom: 165px;
+        min-height: calc(100vh - 479px);
+        position: relative;
+    
+        @include mobile {
+            padding-top: 80px;
+            margin-top: 0;
+            margin-bottom: 76px;
+        }
+    
+        &.var {
+            margin-top: 0;
+            margin-bottom: 0;
+            display: block;
+        }
+
+        &.space_top{
+            padding-top: 0px;
+        }
+    
+        .admin_side_wrap {
+            width: 32%;
+    
+            > ul {
+    
+                li {
+    
+                    .side_link {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        height: 54px;
+                        line-height: 54px;
+                        border-bottom: 1px solid color(dark_blue);
+                        padding-left: 26px;
+                        padding-right: 16px;
+                        font-size: 18px;
+                        color: color(dark_blue);
+                        width: 100%;
+                        border-radius: 0;
+                        position: relative;
+                        font-family: $Mont;
+                        white-space: nowrap;
+    
+                        img {
+                            position: absolute;
+                            right: 16px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            height: 14px;
+                            width: 8px;
+                            object-fit: contain;
+                            object-position: center;
+                        }
+    
+                        &.active {
+                            background: #EFF7FB;
+                            font-weight: bold;
+                        }
+                    }
+                }
+    
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    
+        .admin_content {
+            width: 63%;
+    
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        .custom_crumbs {
+            margin-top: 43px;
+
+        
+            ul {
+                display: flex;
+                align-items: flex-start;
+        
+                @include mobile {
+                    flex-wrap: wrap;
+                }
+        
+                li {
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: color(dark);
+                    position: relative;
+        
+                    img {
+                        position: absolute;
+                        width: 6px;
+                        height: 12px;
+                        object-fit: contain;
+                        object-position: center;
+                        right: 11px;
+                        top: calc(50% - 5px);
+                    }
+        
+                    @include mobile {
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
+        
+                    .active {
+                        font-weight: 900;
+                        font-size: 18px;
+                        line-height: 22px;
+                        color: color(orange);
+                        margin-right: 28px;
+        
+                        @include mobile {
+                            font-size: 16px;
+                            line-height: 19px;
+                        }
+                    }
+                }
+            }
+        
+            &.add_spaces {
+                padding-left: 0px;
+                padding-right: 0px;
+
+                ul {
+        
+                    li {
+        
+                        @include mobile {
+                            display: none;
+                        }
+        
+                        &.back {
+                            display: none;
+        
+                            @include mobile {
+                                display: block;
+        
+                                img {
+                                    position: static;
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .content_edit_area {
+
+            &.min {
+                width: 664px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 24px;
+        
+                @include mobile {
+                    width: 100%;
+                }
+            }
+        
+            .content_tabs {
+                display: flex;
+        
+                .btn {
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #808080;
+                    font-size: 13px;
+                    line-height: 15px;
+                    width: calc(100% / 3);
+                    border: 0;
+                    border-bottom: 2px solid #808080;
+                    border-radius: 0 !important;
+                    margin: 0;
+        
+                    span {
+                        width: 19px;
+                        height: 19px;
+                        line-height: 19px;
+                        font-weight: bold;
+                        font-size: 12px;
+                        color: #fff;
+                        border-radius: 50%;
+                        background: #808080;
+                        margin-right: 6px;
+                        flex-shrink: 0;
+                    }
+        
+                    &.active {
+                        border-color: color(orange);
+                        color: color(orange);
+        
+                        span {
+                            background: color(orange);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

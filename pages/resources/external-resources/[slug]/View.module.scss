@@ -1,0 +1,344 @@
+@import '../../../../styles/mixin';
+
+.text{
+	font-size: 16px;
+	line-height: 26px;
+	color: #333333;
+    padding-bottom: 21px;
+}
+
+.custom_crumbs {
+    margin-top: 43px;
+
+    ul {
+        display: flex;
+        align-items: flex-start;
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
+
+        li {
+            font-size: 18px;
+            line-height: 22px;
+            color: color(dark);
+            position: relative;
+
+            img {
+                position: absolute;
+                width: 6px;
+                height: 12px;
+                object-fit: contain;
+                object-position: center;
+                right: 11px;
+                top: calc(50% - 5px);
+            }
+
+            @include mobile {
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            .active {
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 22px;
+                color: color(orange);
+                margin-right: 28px;
+
+                @include mobile {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+
+    &.sm {
+
+        ul {
+
+            li {
+
+                @include mobile {
+                    display: none;
+                }
+
+                &.back {
+                    display: none;
+
+                    @include mobile {
+                        display: block;
+
+                        img {
+                            position: static;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.publication_view {
+    margin-top: 70px;
+    margin-bottom: 200px;
+
+    @include mobile {
+        margin-top: 22px;
+        margin-bottom: 76px;
+    }
+
+    .blog_title {
+        font-weight: bold;
+        font-size: 44px;
+        line-height: 54px;
+        color: color(dark_blue);
+        font-family: $Mont;
+        margin-bottom: 35px;
+
+        @include mobile {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 21px;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .share {
+            padding: 20px 0;
+
+            .icons {
+                display: flex;
+
+                .icon {
+                    line-height: 40px;
+                    text-align: center;
+                    display: block;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    margin-right: 9px;
+                    background: color(orange);
+
+                    button {
+                        vertical-align: unset !important;
+                    }
+
+                    img {
+                        height: 20px;
+                        width: 20px;
+                        object-fit: contain;
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+
+            @include mobile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-top: 0.5px solid rgba(color(dark_blue), 0.5);
+                margin-top: 20px;
+
+                .side_title {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .side_title {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: color(dark);
+            margin-bottom: 13px;
+
+            @include mobile {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        .img_wrap {
+			height: 381px;
+			background: #F4F6F9;
+			padding: 55px 75px;
+			margin-bottom: 20px;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            @include tab {
+                padding: 20px;
+            }
+
+            @include mobile {
+                background: transparent;
+                width: 126px;
+                height: unset;
+                padding: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &.lg {
+                display: block;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+			
+            &.sm {
+                display: none;
+                
+                @include mobile {
+                    display: block;
+                    border-bottom: 0.5px solid rgba(color(dark_blue), 0.5);
+                }
+            }
+        }
+
+        .sidebar {
+            width: 32%;
+
+            @include mobile {
+                width: 100%;
+                order: 1;
+            }
+
+            > .btn:not(.accord) {
+                height: 55px;
+                background: color(orange);
+                margin-top: 25px;
+                width: 100%;
+                border: 0;
+                border-radius: 0;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 55px;
+                color: #FFFFFF;
+                padding: 0;
+            }
+
+            ul {
+
+                li {
+                    padding: 20px 0;
+                    border-bottom: 1px solid color(dark_blue);
+
+                    .side_text {
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+
+                    .side_text_badge {
+                        display: inline-block;
+                        height: 30px;
+                        line-height: 30px;
+                        background: color(gray);
+                        font-weight: bold;
+                        font-size: 12px;
+                        color: #FFFFFF;
+                        padding: 0 10px;
+                    }
+
+                    @include mobile {
+                        border-bottom: 0;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+
+        .content_wrap {
+            width: 63%;
+
+            @include mobile {
+                width: 100%;
+                order: 0;
+            }
+
+            .dark_title {
+                font-family: $Mont;
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 44px;
+                color: color(dark);
+                margin-bottom: 12px;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            @include mobile {
+
+                .dynamic_content {
+                    border-top: 1px solid color(dark_blue);
+                    padding-top: 14px;
+    
+                    .text {
+                        padding-top: 14px;
+					
+						:global(span){
+							font-size: 14px;
+							color: #333333;
+							line-height: 22px;
+							
+						}
+                    }
+                }
+            }
+        }
+
+        .download_btn {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: #FFFFFF;
+            width: 205px;
+            height: 55px;
+            line-height: 55px;
+            padding: 0;
+            background: color(orange);
+            border: 0;
+            border-radius: 0;
+			text-align: center;
+            &.lg {
+                display: block;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            &.sm {
+                display: none;
+
+                @include mobile {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.text{
+
+	:global(span){
+		font-size: 14px;
+		line-height: 26px;
+		color: #333333;
+	}
+}

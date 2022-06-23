@@ -1,0 +1,150 @@
+@import '../../styles/mixin';
+
+.resources {
+
+    .resources_list {
+        margin-top: 60px;
+        margin-bottom: 200px;
+        display: flex;
+        width: 103%;
+        margin-left: -1.5%;
+
+        @include mobile {
+            flex-wrap: wrap;
+            margin-bottom: 76px;
+        }
+        
+        &_item {
+            width: calc(91% / 3);
+            margin: 1.5%;
+            
+            @include mobile {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            img {
+                height: 205px;
+                object-fit: cover;
+                object-position: center;
+                margin-bottom: 24px;
+            }
+			
+            .inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @include mobile {
+                    padding-left: 35px;
+                }
+
+                .rtitle {
+                    font-weight: bold;
+                    font-size: 21px;
+                    line-height: 25px;
+                    color: color(dark_blue);
+                    margin-bottom: 12px;
+                }
+
+                .rtext {
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: color(dark);
+                    margin-bottom: 38px;
+                }
+
+                .rlink {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-decoration: underline !important;
+                    color: color(orange);
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    height: 250px;
+    position: relative;
+
+    @include mobile {
+        height: 188px;
+    }
+
+    .bg {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .wrapper {
+        position: absolute;
+        left: 0;
+        height: 100px;
+        width: 100vw;
+        top: calc(50% - 50px);
+
+        @include mobile {
+            height: 49px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        h1 {
+            width: 32%;
+            position: relative;
+
+            @include tab {
+                width: unset;
+                padding-right: 30px;
+                display: inline-block;
+            }
+
+            @include mobile {
+                width: unset;
+                background: color(green);
+                text-align: center;
+                padding-right: 0;
+                display: block;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 49px;
+                line-height: 100px;
+                color: #FFFFFF;
+                font-family: $Mont;
+                position: relative;
+                letter-spacing: 1px;
+                z-index: 2;
+
+                @include mobile {
+                    font-size: 26px;
+                    line-height: 49px;
+                    text-align: center;
+                }
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 100px;
+                background: color(green);
+                width: 100vw;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+
+                @include mobile {
+                    content: none;
+                }
+            }
+        }
+    }
+}

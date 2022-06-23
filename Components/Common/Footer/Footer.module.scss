@@ -1,0 +1,193 @@
+@import '../../../styles/mixin';
+
+.footer {
+    min-height: 354px;
+    padding-top: 75px;
+    padding-bottom: 150px;
+    position: relative;
+    background: color(light-gray);
+
+    .bg {
+        display: block;
+        height: 90px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: bottom right;
+    }
+
+    .wrapper {
+        display: flex;
+
+        .wrap {
+            width: 50%;
+
+            &.left {
+                display: flex;
+
+                @include tab {
+                    margin-bottom: 60px;
+                }
+
+                img {
+                    width: 112px;
+                    height: 91px;
+                    margin-right: 20px;
+
+                    @include tab {
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .inner {
+
+                    .bold {
+                        font-family: $Mont;
+                        font-weight: bold;
+                        font-size: 17px;
+                        line-height: 21px;
+                        color: color(dark);
+                        margin-bottom: 10px;
+                    }
+
+                    .lgt {
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: color(dark);
+
+                        @include mobile {
+                            font-size: 12px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+
+            &.right {
+                display: flex;
+                justify-content: flex-end;
+
+                @include tab {
+                    justify-content: flex-start;
+                }
+
+                .inner {
+                    width: 400px;
+                    max-width: 95%;
+
+                    @include mobile {
+                        max-width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .bold {
+                        font-weight: bold;
+                        font-size: 17px;
+                        line-height: 21px;
+                        color: color(dark);
+                        font-family: $Mont;     
+                        
+                        @include mobile {
+                            width: 100%;
+                        }
+                    }
+
+                    @include mobile {
+
+                        > .bold {
+                            order: 1;
+                        }
+                    }
+
+                    .newsletter {
+                        margin: 18px 0 22px 0;
+                        display: flex;
+                        height: 36px;
+
+                        @include mobile {
+                            order: 2;
+                        }
+
+                        .form_control {
+                            flex: 1;
+                            border-radius: 0;
+                            padding: 0 10px;
+                            border: 0;
+                            height: 36px;
+                            line-height: 36px;
+                            font-size: 17px;
+                            color: color(dark);
+
+                            &::placeholder {
+                                color: rgba(31, 30, 29, 0.5);
+                                font-style: italic;
+                            }
+                        }
+
+                        .btn {
+                            width: 100px;
+                            background: color(orange);
+                            padding: 0;
+                            line-height: 36px;
+                            font-weight: bold;
+                            font-size: 16px;
+                            border-radius: 0;
+                            color: #FFFFFF;
+                        }
+                    }
+
+                    .social {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        @include mobile {
+                            order: 0;
+                            flex-wrap: wrap;
+                        }
+
+                        .icons {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+
+                            @include mobile {
+                                margin-top: 11px;
+                                margin-bottom: 54px;
+                            }
+
+                            .social_link {
+                                display: block;
+                                margin-left: 20px;
+
+                                @include mobile {
+                                    margin-right: 20px;
+                                    margin-left: 0;
+                                }
+
+                                img {
+                                    height: 30px;
+                                    object-fit: contain;
+                                    object-position: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include tab {
+            flex-wrap: wrap;
+
+            .wrap {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
