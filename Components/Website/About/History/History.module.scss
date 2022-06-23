@@ -1,0 +1,140 @@
+@import '../../../../styles/mixin';
+
+.content_wrap {
+	width: 63%;
+
+	@include mobile {
+		width: 100%;
+		order: 0;
+	}
+	
+	.dynamic_content {
+		border-bottom: 1px solid color(dark);
+
+	}
+
+}
+
+.text {
+	font-size: 16px;
+	line-height: 26px;
+	color: color(dark);
+
+	@include mobile {
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	.text_container {
+
+		strong {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 22px;
+			color: color(dark);
+		}
+
+		a {
+			font-size: 16px;
+			line-height: 26px;
+			text-decoration-line: underline !important;
+			color: #EE6F2E;
+		}
+	}
+}
+
+.history {
+
+	.hbox {
+		margin-bottom: 25px;
+		padding-left: 86px;
+		position: relative;
+
+		@include mobile {
+			padding-left: 40px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 27px;
+			width: 27px;
+			border-radius: 50%;
+			background-color: color(dark_blue);
+			top: 0;
+			left: 26px;
+
+			@include mobile {
+				height: 17px;
+				width: 17px;
+				left: 0;
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 3px;
+			background-color: color(dark_blue);
+			top: 27px;
+			left: 38.5px;
+
+			@include mobile {
+				top: 17px;
+				left: 7px;
+				height: calc(100% + 10px);
+			}
+		}
+
+		&:last-child {
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&_inner {
+			position: relative;
+			padding: 0;
+			width: 100%;
+			text-align: left;
+
+			.icon {
+				position: absolute;
+				right: 0;
+				top: 5.5px;
+				width: 19px;
+				height: 11px;
+				object-fit: contain;
+				object-position: right;
+				transform: rotate(180deg);
+				transition: all 0.125s ease-in-out;
+
+				&.flip {
+					transform: rotate(0);
+				}
+			}
+
+			.hbox_title {
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 22px;
+				color: color(dark_blue);
+				margin-bottom: 6px;
+			}
+
+			.hbox_role {
+				font-size: 16px;
+				line-height: 26px;
+				color: color(gray);
+				margin-bottom: 15px;
+			}
+		}
+
+		.text {
+			padding-bottom: 30px;
+		}
+	}
+}
+

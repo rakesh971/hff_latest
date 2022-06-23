@@ -1,0 +1,341 @@
+@import '../../../styles/_mixin';
+
+.header {
+	background: color(light-gray);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    height: 95px;
+    position: relative;
+    z-index: 99;
+
+	@include tab {
+        height: 69px;
+
+		.contain {
+			padding: 0;
+		}
+    }
+	
+	.wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+		.drop_btn {
+            display: none;
+            border-radius: 0;
+
+            @include tab {
+                display: block;
+                width: 69px;
+                height: 69px;
+                padding: 20px;
+
+                .close_icon {
+                    display: none;
+                    height: 22px;
+                    width: 22px;
+                    margin: auto;
+                    object-fit: contain;
+                    object-position: center;
+                }
+
+                &.open {
+                    background: color(green);
+
+                    .close_icon {
+                        display: block;
+                    }
+
+                    .menu_icon {
+                        display: none;
+                    }
+                }
+
+                img {
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+        }
+
+		.logo {
+            width: 256px;
+            display: block;
+
+            img {
+                height: 77px;
+
+                @include tab {
+                    height: 55px;
+                    object-fit: contain;
+                    object-position: left;
+                }
+            }
+        }
+
+		.menu {
+            flex: 1;
+            z-index: 2;
+            background: color(light-gray);
+
+			@include tab {
+                position: absolute;
+                top: 100%;
+                width: 100vw;
+                left: 0;
+                right: 0;
+                background: color(green);
+                display: none;
+
+                &.open {
+                    display: block;
+                }
+            }
+
+			> ul {
+                display: flex;
+                justify-content: center;
+
+				@include tab {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+				> li {
+                    position: relative;
+
+                    @include tab {
+                        width: 100%;
+                    }
+
+                    &:last-child {
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            height: 95px;
+                            background-color: color(light-gray);
+                            width: 50vw;
+                            left: 100%;
+                            z-index: 2;
+
+                            @include tab {
+                                height: 69px;
+                                content: none;
+                            }
+                        }
+						
+                        > .btn {
+                            
+                            @include tab {
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+
+                    > .btn {
+                        height: 95px;
+                        line-height: 95px;
+                        display: block;
+                        font-family: $Mont;
+                        font-weight: 500;
+                        font-size: 16px;
+                        color: color(dark);
+                        padding: 0 15px;
+                        border-radius: 0;
+                        position: relative;
+                        z-index: 2;
+                        background: color(light-gray);
+
+                        @include tab {
+                            width: 100%;
+                            background: transparent;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 0 28px;
+                            color: #fff;
+                            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+                        }
+
+                        img {
+                            width: 7px;
+                            height: 4px;
+                            margin-left: 4px;
+                            object-fit: contain;
+
+                            @include tab {
+                                height: 14px;
+                                width: 14px;
+                                filter: brightness(0) invert(1);
+                            }
+                        }
+
+                        &.active {
+                            background-color: color(green);
+                            color: #fff;
+
+                            img {
+                                filter: brightness(0) invert(1);
+                            }
+                        }
+
+                        @include tab {
+                            height: 48px;
+                            line-height: 48px;
+                        }
+                    }
+
+                    .drop {
+                        width: 332px;
+                        position: absolute;
+                        background-color: color(green);
+                        filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.26));
+                        display: none;
+
+                        ul {
+
+                            li {
+
+                                .navlink {
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    color: #FFFFFF;
+                                    padding: 15px 27px;
+                                    display: block;
+                                    font-family: $Mont;
+                                    font-weight: 400;
+                                    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.3);
+
+                                    @include desktop {
+
+                                        &:hover {
+                                            background: rgba(0, 0, 0, 0.035);
+                                        }
+                                    }
+
+									&.active {
+										background-color: color(green);
+										color: #fff;
+			
+										img {
+											filter: brightness(0) invert(1);
+										}
+									}
+                                }
+                            }
+                        }
+                    }
+
+                    @include desktop {
+
+                        &:hover {
+                            
+                            > .btn {
+                                background-color: color(green);
+                                color: #fff;
+    
+                                img {
+                                    filter: brightness(0) invert(1);
+                                }
+                            }
+    
+                            .drop {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+				&.ahead {
+                
+                    li {
+                        
+                        &::before {
+                            content: none !important;
+                        }
+                    }
+                }
+			}
+		}
+        .profile {
+            position: relative;
+            width: 40px;
+            z-index: 3;
+        
+            @include tab {
+                margin-left: auto;
+                margin-right: 20px;
+            }
+            
+            .profile_btn {
+                height: 64px;
+                width: 40px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+                img {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        
+            .profile_dropdown {
+                position: absolute;
+                top: 82px;
+                right: 0;
+                min-width: 160px;
+                background: #fff;
+                border: 0.5px solid rgba(187, 187, 187, 0.25);
+                box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.05);
+                padding: 10px 1rem;
+                border-radius: 4px;
+        
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -8px;
+                    right: 12.5px;
+                    width: 15px;
+                    height: 15px;
+                    background: #fff;
+                    border-right: 1px solid #ebebeb;
+                    border-top: 1px solid #ebebeb;
+                    transform: rotate(-45deg);
+                }
+        
+                .profile_menu {
+        
+                    .profile_link {
+                        display: block;
+                        padding: 7px 8px;
+                        transition: all 0.2s ease-in-out;
+                        
+                        li {
+                            white-space: nowrap;
+                            font-size: 14px;
+                            line-height: 19px;
+                            color: #404040a6;
+                            font-weight: 500;
+                            transition: all 0.2s ease-in-out;
+                        }
+        
+                        &:hover {
+        
+                            li {
+                                color: color(green);
+                            }
+                        }
+                    }
+                }
+            }
+        }	
+	}
+}

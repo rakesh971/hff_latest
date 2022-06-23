@@ -1,0 +1,84 @@
+@import '../../../../styles/mixin';
+
+.content_wrap {
+	width: 63%;
+
+	@include mobile {
+		width: 100%;
+		order: 0;
+	}
+	
+	.dynamic_content {
+		border-bottom: 1px solid color(dark);
+	}
+}
+
+
+.slider {
+	margin-bottom: 54px;
+	
+
+
+	.swiper-pagination {
+		bottom: 16px;
+
+		.swiper-pagination-bullet {
+			height: 14px;
+			width: 14px;
+			background: #c4c4c4;
+			opacity: 1;
+			margin: 0 7.5px;
+
+			&.swiper-pagination-bullet-active {
+				background: color(orange);
+			}
+		}
+	}
+
+	:global(.swiper-pagination){
+		
+		:global(.swiper-pagination-bullet){
+			margin: 0 7.5px;
+		}
+	}
+
+	.slide_wrap {
+		position: relative;
+		height: 306px;
+
+		.img_wrap {
+			height: 100%;
+
+			img {
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+}
+
+.network, .partners {
+	margin-bottom: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 103%;
+	margin-left: -1.5%;
+
+	.nbox {
+		width: calc(91% / 3);
+		margin: 1.5%;
+		border: 1px solid color(dark_blue);
+		padding: 35px;
+
+		@include mobile {
+			width: calc(94% / 2);
+		}
+		
+		img {
+			height: 100%;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
+}

@@ -1,0 +1,201 @@
+@import '../../styles/mixin';
+
+
+.contact {
+    margin-top: 70px;
+    margin-bottom: 200px;
+    padding-bottom: 2px;
+
+    @include mobile {
+        margin-top: 0;
+        margin-bottom: 75px;
+        position: relative;
+
+        &:before {
+            content: 'Contact Us';
+            font-weight: bold;
+            font-size: 26px;
+            height: 49px;
+            line-height: 49px;
+            color: #FFFFFF;
+            font-family: $Mont;
+            background: color(green);
+            display: block;
+            padding: 0 25px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .sidebar {
+            width: 32%;
+
+            @include mobile {
+                width: 100%;
+                margin-bottom: 60px;
+            }
+
+            .img_wrap {
+                max-height: 193px;
+                max-width: 90%;
+                width: 269px;
+                text-align: center;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    margin-bottom: 10px;
+                }
+
+                @include mobile {
+                    margin: auto;
+                }
+            }
+
+            .side_title {
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 22px;
+                color: color(dark);
+                margin-bottom: 13px;
+            }
+
+            ul {
+
+                li {
+                    padding: 20px 0;
+                    border-bottom: 1px solid color(dark_blue);
+
+                    .side_text {
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+
+            .share {
+                padding: 20px 0;
+    
+                .icons {
+                    display: flex;
+    
+                    .icon {
+                        line-height: 40px;
+                        text-align: center;
+                        display: block;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        margin-right: 9px;
+                        background: color(orange);
+
+                        button {
+                            vertical-align: unset !important;
+                        }
+    
+                        img {
+                            height: 20px;
+                            width: 20px;
+                            object-fit: contain;
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .content_wrap {
+            width: 63%;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            .form_title {
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 27px;
+                color: color(dark);
+                font-family: $Mont;
+                margin-bottom: 41px;
+            }
+
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                width: 102%;
+                margin-left: -1%;
+
+                .form_grp {
+                    width: 100%;
+                    margin: 1%;
+                    margin-bottom: 25px;
+
+                    &.half {
+                        width: 48%;
+
+                        @include mobile {
+                            width: 100%;
+                        }
+                    }
+
+                    label {
+                        font-weight: 900;
+                        font-size: 17px;
+                        line-height: 20px;
+                        color: color(dark);
+                        margin-bottom: 13px;
+                    }
+
+                    .form_control {
+                        height: 36px;
+                        line-height: 36px;
+                        background: #E7ECF1;
+                        border: 0;
+                        border-radius: 0;
+                        padding: 0;
+                        padding-left: 17px;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: color(dark);
+						
+                        &::placeholder {
+                            color: rgba(31, 30, 29, 0.5);
+                            font-style: italic;
+                        }
+                    }
+					
+                    textarea.form_control {
+                        height: 226px;
+                        padding-top: 10px;
+                    }
+
+                    .btn {
+                        width: 332px;
+                        max-width: 95%;
+                        height: 55px;
+                        background: color(orange);
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 55px;
+                        color: #FFFFFF;
+                        padding: 0;
+                        border-radius: 0;
+                        margin-top: 10px;
+
+                        @include mobile {
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

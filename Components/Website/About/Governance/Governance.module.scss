@@ -1,0 +1,116 @@
+@import '../../../../styles/mixin';
+
+
+.dynamic_content {
+
+    .text {
+        font-size: 16px;
+        line-height: 26px;
+        color: color(dark);
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+    }
+
+    .section_title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+}
+
+.section_other {
+    padding: 30px 0;
+    border-bottom: 1px solid color(dark);
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    .section_title {
+        letter-spacing: 0;
+        font-size: 22px;
+    }
+
+    .section_description {
+        font-size: 16px;
+        line-height: 26px;
+        color: color(dark);
+        padding-bottom: 24px;
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        strong {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: color(dark);
+        }
+
+        a {
+            font-size: 16px;
+            line-height: 26px;
+            text-decoration-line: underline !important;
+            color: #EE6F2E;
+        }
+    }
+
+    .section_team {
+        display: flex;
+        flex-wrap: wrap;
+        width: 103%;
+        margin-left: -1.5%;
+
+        .tbox {
+            width: 47%;
+            margin: 1.5%;
+
+            @include mobile {
+                width: 100%;
+                margin-bottom: 1.65rem;
+            }
+
+            img {
+                height: 180px;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            &_inner {
+                padding-top: 8px;
+
+                .tbox_title {
+                    color: color(dark_blue);
+                    font-weight: bold;
+                    font-size: 18px;
+                    padding-bottom: 4px;
+                    font-family: $Mont;
+                }
+
+                .tbox_role {
+                    font-weight: 600;
+                    color: color(dark);
+                    padding-bottom: 4px;
+                    font-size: 14px;
+                }
+
+                .text {
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-decoration: underline !important;
+                    color: color(orange);
+                    position: relative;
+                    margin: 2px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$colors: (
+    green: #95C15C,
+    orange: #EE6F2E,
+    blue_medium: #5375A8,
+    blue: #5E9BDA,
+    blue_light: #5CB4D5,
+    dark: #333333,
+    dark_blue: #264F7F,
+    gray: #7D7D7D,
+    light-gray: #EEF1F6
+);
+
+$Mont: 'Montserrat', sans-serif;
+$Lato: 'Lato', sans-serif;
+
+$sm: 767px;
+$md: 1023px;
+$lg: 1024px;
+$xl: 1441px;
+
+@mixin xl {
+    @media (min-width: #{$xl}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$lg}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: #{$md}) {
+        @content;
+    }
+}
+
+@mixin from-tab {
+    @media (min-width: #{$sm}) {
+        @content;
+    }
+}
+
+@mixin till-large {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$sm}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 680px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (max-width: 540px) {
+        @content;
+    }
+}
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}

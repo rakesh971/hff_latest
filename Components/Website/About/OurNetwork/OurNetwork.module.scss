@@ -1,0 +1,353 @@
+@import '../../../../styles/mixin';
+
+.dynamic_content {
+
+    .tab_title {
+        height: 54px;
+        line-height: 54px;
+        border-bottom: 1px solid color(dark_blue);
+        font-weight: bold;
+        font-size: 21px;
+        color: color(dark_blue);
+        font-family: $Mont;
+        margin-bottom: 28px;
+
+        @include tab {
+            font-size: 18px;
+            display: none;
+        }
+    }
+
+    .text {
+        font-size: 16px;
+        line-height: 26px;
+        color: color(dark);
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        .text_container {
+
+            strong {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+                color: color(dark);
+            }
+
+            a {
+                font-size: 16px;
+                line-height: 26px;
+                text-decoration-line: underline !important;
+                color: #EE6F2E;
+            }
+        }
+    }
+
+    .section_title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+
+    .blank_link {
+        font-size: 16px;
+        line-height: 26px;
+        text-decoration-line: underline;
+        color: #EE6F2E;
+    }
+
+    .img_wrap {
+
+        > img {
+            margin-bottom: 28px;
+        }
+
+        &.multiple {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .inner_wrap {
+                width: calc(50% - 16px);
+                margin: 16px 0;
+                position: relative;
+
+                @include mobile {
+                    width: 100%;
+                }
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .content_overlay {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    opacity: 0;
+                    transition: all 0.4s ease-in-out 0s;
+                }
+
+                .img_title {
+                    font-weight: bold;
+                    font-family: $Mont;
+                    font-size: 24px;
+                    color: #fff;
+                    position: absolute;
+                    text-align: center;
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    width: 100%;
+                    top: 80%;
+                    left: 50%;
+                    opacity: 0;
+                    transform: translate(-50%, -50%);
+                    transition: all 0.3s ease-in-out 0s;
+                }
+
+                &:nth-child(1) {
+
+                    .content_overlay {
+                        background: color(blue_medium);
+                    }
+                }
+
+                &:nth-child(2) {
+                    .content_overlay {
+                        background: color(blue);
+                    }
+                }
+
+                &:nth-child(3) {
+                    .content_overlay {
+                        background: color(blue_light);
+                    }
+                }
+
+                &:nth-child(4) {
+                    .content_overlay {
+                        background: color(green);
+                    }
+                }
+
+                &:hover {
+
+                    .content_overlay {
+                        opacity: 1;
+                    }
+
+                    .img_title {
+                        top: 50%;
+                        left: 50%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .team {
+        
+        .tbox {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid color(dark_blue);
+
+            @include mobile {
+                
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+
+            img {
+                width: 38%;
+                object-fit: cover;
+                object-position: center;
+
+                @include mobile {
+                    width: 206px;
+                    height: 206px;
+                    margin: 0 auto 17px auto;
+                }
+            }
+
+            &_inner {
+                width: 57%;
+
+                @include mobile {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .tbox_title {
+                    font-weight: bold;
+                    font-size: 26px;
+                    line-height: 32px;
+                    color: color(dark_blue);
+                    margin-bottom: 6px;
+                    font-family: $Mont;
+                    padding-bottom: 5px;
+                }
+                
+                .tbox_role {
+                    font-weight: 300;
+                    font-size: 17px;
+                    line-height: 21px;
+                    color: color(dark_blue);
+                    margin-bottom: 6px;
+                    font-family: $Mont;
+                    padding-bottom: 17px;
+                }
+                
+                .text {
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+   
+
+    .network, .partners {
+        margin-bottom: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 103%;
+        margin-left: -1.5%;
+
+        .nbox {
+            width: calc(91% / 3);
+            margin: 1.5%;
+            border: 1px solid color(dark_blue);
+            padding: 35px;
+
+            @include mobile {
+                width: calc(94% / 2);
+            }
+            
+            img {
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+
+ 
+
+    .members {
+        display: flex;
+        flex-wrap: wrap;
+
+        .membox {
+            width: 50%;
+
+            @include mobile {
+                width: 100%;   
+            }
+
+            .text_link {
+                font-size: 16px;
+                line-height: 26px;
+                text-decoration-line: underline;
+                color: color(orange);
+                padding-left: 20px;
+                position: relative;
+                margin: 2px 0;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: calc(50% - 3px);
+                    left: 5px;
+                    height: 6px;
+                    width: 6px;
+                    border-radius: 50%;
+                    background: color(orange);
+                }
+            }
+        }
+    }
+
+    .speakers {
+        width: 104%;
+        margin-left: -2%;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mobile {
+            padding-top: 14px;
+        }
+
+        .sbox {
+            width: 46%;
+            margin: 2%;
+            
+            @include mobile {
+                text-align: center;
+            }
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                margin-bottom: 26px;
+
+                @include mobile {
+                    width: 206px;
+                    margin-bottom: 17px;
+                }
+            }
+
+            .sbox_title {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 24px;
+                color: color(dark_blue);
+                margin-bottom: 8px;
+                font-family: $Mont;
+
+                @include mobile {
+                    font-size: 19px;
+                    line-height: 23px;
+                }
+            }
+
+            .sbox_text {
+                font-size: 16px;
+                line-height: 26px;
+                color: color(dark);
+
+                @include mobile {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+
+                a {
+                    color: color(orange);
+                    text-decoration: underline !important;
+                    padding-top: 4px;
+                }
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}
