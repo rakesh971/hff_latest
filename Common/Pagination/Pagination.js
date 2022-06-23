@@ -5,7 +5,6 @@ import styles from './Pagination.module.scss'
 const Pagination = ({ Data, Config, SetConfig, DefaultLimit = 20 }) => {
     const [ItemsCount, SetItemsCount] = useState(null)
     const [ItemsSelected, SetItemsSelected] = useState()
-
     useEffect(() => {
         SetItemsCount([
             { value: DefaultLimit, label: DefaultLimit },
@@ -16,7 +15,6 @@ const Pagination = ({ Data, Config, SetConfig, DefaultLimit = 20 }) => {
         ])
         SetItemsSelected({ value: DefaultLimit, label: DefaultLimit })
     }, [])
-
     const isFirst = (pagination) => {
         return pagination.page === 1;
     }
@@ -61,7 +59,6 @@ const Pagination = ({ Data, Config, SetConfig, DefaultLimit = 20 }) => {
         });
         return pages;
     }
-    
     return (
         // isAvailable(Data) &&
         <div className={styles.custom_pagination}>
@@ -70,7 +67,7 @@ const Pagination = ({ Data, Config, SetConfig, DefaultLimit = 20 }) => {
                     pageDottedRange(Data, 2).map((n, i) => {
                         return (
                             n === "..." ?
-                                <button key={`paginate${i}`} className= {styles.btn}>{n}</button> :
+                                <button key={`paginate${i}`} className={`btn ${styles.btn}`}>{n}</button> :
                                 <button key={`paginate${i}`} onClick={(e) => SetConfig({ ...Config, page: n })} className={`${styles.btn} ${isCurrent(Data, n) && `${styles.active}`}`}>{n}</button>
                         )
                     })

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Api } from "../../../Common/Api";
+import { Api } from "../../../Common/Api/Api";
 
 const Image = React.forwardRef(({ image, className, alt = "image",style },ref) => {
 

@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { Api } from "../../../Common/Api";
+import { Api } from "../../../Common/Api/Api"
 import https from "https";
 import http from "http";
 
